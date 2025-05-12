@@ -10,6 +10,8 @@ const Add = ({url}) => {
     const [image,setImage] = useState(false);
     const [data,setData] = useState({
         name:"",
+        originalPrice:"",
+        discount:"",
         description:"",
         price:"",
         category:"Salad"
@@ -25,6 +27,8 @@ const Add = ({url}) => {
         event.preventDefault();
         const formData = new FormData();
         formData.append("name",data.name)
+        formData.append("originalPrice",Number(data.originalPrice))
+        formData.append("discount",Number(data.discount))
         formData.append("description",data.description)
         formData.append("price",Number(data.price))
         formData.append("category",data.category)
@@ -33,6 +37,8 @@ const Add = ({url}) => {
         if (response.data.success) {
             setData({
                 name:"",
+                originalPrice:"",
+                discount:"",
                 description:"",
                 price:"",
                 category:"Salad"
@@ -59,6 +65,14 @@ const Add = ({url}) => {
             <div className="add-product-name flex-col">
                 <p>Product name</p>
                 <input onChange={onChangeHandler} value={data.name} type="text" name='name' placeholder='Type here' />
+            </div>
+            <div className="add-product-originalPrice flex-col">
+                <p>Product originalPrice</p>
+                <input onChange={onChangeHandler} value={data.originalPrice} type="number" name='originalPrice' placeholder='Type here' />
+            </div>
+            <div className="add-product-discount flex-col">
+                <p>Product discount (!important Insert positive value)</p>
+                <input onChange={onChangeHandler} value={data.discount} type="number" name='discount' placeholder='Type here' />
             </div>
             <div className="add-product-description flex-col">
                 <p>Product Description</p>

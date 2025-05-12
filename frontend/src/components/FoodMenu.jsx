@@ -49,7 +49,7 @@ const FoodMenu = () => {
                     alt={item.title} 
                     className="w-100" 
                   />
-                  {item.discount && <div className="badge">-{item.discount}%</div>}
+                  {/* {item.discount && <div className="badge">-{item.discount}%</div>} */}
                   <button className="btn food-menu-btn">Order Now</button>
                 </div>
 
@@ -62,12 +62,12 @@ const FoodMenu = () => {
                   </div>
                 </div>
 
-                <h3 className="h3 card-title">{item.title}</h3>
+                <h3 className="h3 card-title">{item.name}</h3>
 
                 <div className="price-wrapper">
                   <p className="price-text">Price:</p>
                   <data className="price">${item.price.toFixed(2)}</data>
-                  <del className="del">${item.originalPrice.toFixed(2)}</del>
+                  {/* <del className="del">${item.originalPrice.toFixed(2)}</del> */}
                 </div>
               </div>
             </li>
