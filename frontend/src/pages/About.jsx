@@ -1,10 +1,12 @@
 import React from 'react';
 import { IonIcon } from '@ionic/react';
 import { checkmarkOutline } from 'ionicons/icons';
-
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 const About = () => {
   return (
     <div>
+      <Header />
       <section className="section section-divider gray about" id="about">
         <div className="container">
 
@@ -64,6 +66,7 @@ const About = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

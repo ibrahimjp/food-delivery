@@ -1,8 +1,10 @@
 import React from "react";
-
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 const Blog = () => {
   return (
     <div>
+      <Header />
       <section className="section section-divider white blog" id="blog">
         <div className="container">
 
@@ -150,6 +152,7 @@ const Blog = () => {
           </ul>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

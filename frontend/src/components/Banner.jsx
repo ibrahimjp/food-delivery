@@ -25,8 +25,8 @@ const Banner = () => {
                   <p className="banner-subtitle">50% Off Now!</p>
                   <h3 className="banner-title">Discount For Delicious Tasty Burgers!</h3>
                   <p className="banner-text">Sale off 50% only this week</p>
-                  <button className="btn">Order Now</button>
-                </div>
+                  <button className="ui-button">Contact Us</button>
+                </div>Contact Us
               </div>
             </li>
 
@@ -45,7 +45,7 @@ const Banner = () => {
                 <div className="banner-item-content">
                   <h3 className="banner-title">Delicious Pizza</h3>
                   <p className="banner-text">50% off Now</p>
-                  <button className="btn">Order Now</button>
+                  <button className="ui-button">Contact Us</button>
                 </div>
               </div>
             </li>
@@ -65,7 +65,7 @@ const Banner = () => {
                 <div className="banner-item-content">
                   <h3 className="banner-title">American Burgers</h3>
                   <p className="banner-text">50% off Now</p>
-                  <button className="btn">Order Now</button>
+                  <button className="ui-button">Contact Us</button>
                 </div>
               </div>
             </li>
@@ -85,7 +85,9 @@ const Banner = () => {
                 <div className="banner-item-content">
                   <h3 className="banner-title">Tasty Buzzed Pizza</h3>
                   <p className="banner-text">Sale off 50% only this week</p>
-                  <button className="btn">Order Now</button>
+                 <a href="/contact">
+                  <button className="ui-button">Contact Us</button>
+                  </a> 
                 </div>
               </div>
             </li>

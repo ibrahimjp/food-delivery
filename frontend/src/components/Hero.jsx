@@ -1,5 +1,4 @@
 import React from "react";
-
 const Hero = () => {
   return (
     <section
@@ -9,7 +8,7 @@ const Hero = () => {
     >
       <div className="container">
         <div className="hero-content">
-          <p className="hero-subtitle">Eat Sleep And</p>
+          <p className="hero-subtitle">Eat Sleep And Repeat</p>
 
           <h2 className="h1 hero-title">Super delicious Burger in town!</h2>
 
@@ -17,7 +16,9 @@ const Hero = () => {
             Food is any substance consumed to provide nutritional support for an organism.
           </p>
 
-          <button className="btn">Book A Table</button>
+          <a href="/shop">
+          <button className="ui-button">Browse All The Items Now</button>
+          </a>
         </div>
 
         <figure className="hero-banner">

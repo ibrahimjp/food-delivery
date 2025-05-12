@@ -1,5 +1,5 @@
 import React from "react";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Footer = () => {
   return (
     <footer className="footer">
@@ -18,23 +18,23 @@ const Footer = () => {
             {/* Social Links */}
             <ul className="social-list">
               <li>
+                <a href="#" className="social-link" aria-label="Instagram">
+                <FontAwesomeIcon icon="fa-brands fa-instagram" />
+                </a>
+              </li>
+              <li>
+                <a href="#" className="social-link" aria-label="Linkedin">
+                <FontAwesomeIcon icon="fa-brands fa-linkedin" />
+                </a>
+              </li>
+              <li>
                 <a href="#" className="social-link" aria-label="Facebook">
-                  <ion-icon name="logo-facebook"></ion-icon>
+                <FontAwesomeIcon icon="fa-brands fa-facebook" />
                 </a>
               </li>
               <li>
                 <a href="#" className="social-link" aria-label="Twitter">
-                  <ion-icon name="logo-twitter"></ion-icon>
-                </a>
-              </li>
-              <li>
-                <a href="#" className="social-link" aria-label="Instagram">
-                  <ion-icon name="logo-instagram"></ion-icon>
-                </a>
-              </li>
-              <li>
-                <a href="#" className="social-link" aria-label="Pinterest">
-                  <ion-icon name="logo-pinterest"></ion-icon>
+                <FontAwesomeIcon icon="fa-brands fa-twitter" />
                 </a>
               </li>
             </ul>
@@ -73,60 +73,7 @@ const Footer = () => {
           </ul>
 
           {/* Booking Form */}
-          <form className="footer-form">
-            <p className="footer-list-title">Book a Table</p>
-
-            <div className="input-wrapper">
-              <input 
-                type="text" 
-                name="full_name" 
-                required 
-                placeholder="Your Name" 
-                aria-label="Your Name" 
-                className="input-field" 
-              />
-              <input 
-                type="email" 
-                name="email_address" 
-                required 
-                placeholder="Email" 
-                aria-label="Email" 
-                className="input-field" 
-              />
-            </div>
-
-            <div className="input-wrapper">
-              <select 
-                name="total_person" 
-                aria-label="Total person" 
-                className="input-field"
-              >
-                <option value="person">Person</option>
-                <option value="2 person">2 Person</option>
-                <option value="3 person">3 Person</option>
-                <option value="4 person">4 Person</option>
-                <option value="5 person">5 Person</option>
-              </select>
-
-              <input 
-                type="date" 
-                name="booking_date" 
-                aria-label="Reservation date" 
-                className="input-field" 
-              />
-            </div>
-
-            <textarea 
-              name="message" 
-              required 
-              placeholder="Message" 
-              aria-label="Message" 
-              className="input-field"
-            ></textarea>
-
-            <button type="submit" className="btn">Book a Table</button>
-          </form>
-
+          
         </div>
       </div>
 

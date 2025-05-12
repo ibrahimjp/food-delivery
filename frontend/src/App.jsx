@@ -1,51 +1,24 @@
-import { useState, useEffect } from 'react'
-import Header from './components/Header'
-import Hero from './components/Hero'
-import Promo from './components/Promo'
-import About from './components/About'
-import FoodMenu from './components/FoodMenu'
-import Cta from './components/Cta'
-import Delivery from './components/Delivery'
-import Testimonials from './components/Testimonials'
-import Banner from './components/Banner'
-import Blog from './components/Blog'
-import Footer from './components/Footer'
-import Preloader from './components/Preloader'
-import SearchBox from './components/SearchBox'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Blog from './pages/Blog';
+import FoodMenu from './pages/Shop';
+import About from './pages/About';
+import Contact from './pages/Contact';
 
-function App() {
-  const [isLoading, setIsLoading] = useState(true)
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false)
-    }, 2000)
-
-    return () => clearTimeout(timer)
-  }, [])
-
+const App = () => {
+  const [isHome, setIsHome] = React.useState(true);
   return (
-    <>
-      {isLoading ? <Preloader /> : (
-        <>
-          <Header />
-            <SearchBox />
-          <main>
-            <Hero />
-            <Promo />
-            <About />
-            <FoodMenu />
-            <Cta />
-            <Delivery />
-            <Testimonials />
-            <Banner />
-            <Blog />
-          </main>
-          <Footer />
-        </>
-      )}
-    </>
-  )
-}
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/shop" element={<FoodMenu />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/contact-us" element={<Contact />} />
+      </Routes>
+    </Router>
+  );
+};
 
-export default App
+export default App;
