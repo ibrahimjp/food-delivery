@@ -6,8 +6,10 @@
   "type": "module",
   "scripts": {
     "server": "node server.js",
-    "build": "echo 'No build step for backend'"
-  },
+    "build": ""
+  },"engines": {
+    "node": "18.x"
+},
   "author": "",
   "license": "ISC",
   "dependencies": {
