@@ -33,6 +33,7 @@ const Shop = ({url}) => {
     fecthFood();
   },[])
   const filters = [
+  "All",
   "Sandwich",
   "Fries",
   "Chinese",
