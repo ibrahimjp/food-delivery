@@ -4,7 +4,6 @@ import Footer from '../components/Footer';
 import axios from "axios";
 import Preloader from '../components/Preloader';
 import { toast } from 'react-toastify';
-
 const Shop = ({ url }) => {
   const [list, setList] = useState([]);
   const [activeFilter, setActiveFilter] = useState('All');

@@ -12,6 +12,7 @@ import Blog from '../pages/Blog'
 import Footer from '../components/Footer'
 import Preloader from '../components/Preloader'
 import SearchBox from '../components/SearchBox'
+import { Link } from 'react-router-dom'
 
 function Home() {
   const url="https://jamilafood.onrender.com"
@@ -27,6 +28,7 @@ function Home() {
             <Delivery />
             <Testimonials />
             <Banner />
+
            {/* //Blog menu */}
            <section className="section section-divider white blog" id="blog">
         <div className="container">
@@ -60,28 +62,28 @@ function Home() {
 
                 <div className="card-content">
                   <div className="card-meta-wrapper">
-                    <a href="#" className="card-meta-link">
+                    <Link href="#" className="card-meta-link">
                       <ion-icon name="calendar-outline"></ion-icon>
                       <time className="meta-info" dateTime="2022-01-01">Jan 01, 2022</time>
-                    </a>
+                    </Link>
 
-                    <a href="#" className="card-meta-link">
+                    <Link href="#" className="card-meta-link">
                       <ion-icon name="person-outline"></ion-icon>
                       <p className="meta-info">Jonathan Smith</p>
-                    </a>
+                    </Link>
                   </div>
 
                   <h3 className="h3">
-                    <a href="#" className="card-title">What Do You Think About Cheese Pizza Recipes?</a>
+                    <Link href="#" className="card-title">What Do You Think About Cheese Pizza Recipes?</Link>
                   </h3>
                   <p className="card-text">
                     Financial experts support or help you to find out which way you can raise your funds more...
                   </p>
 
-                  <a href="#" className="btn-link">
+                  <Link href="#" className="btn-link">
                     <span>Read More</span>
                     <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </li>
@@ -103,28 +105,28 @@ function Home() {
 
                 <div className="card-content">
                   <div className="card-meta-wrapper">
-                    <a href="#" className="card-meta-link">
+                    <Link href="#" className="card-meta-link">
                       <ion-icon name="calendar-outline"></ion-icon>
                       <time className="meta-info" dateTime="2022-01-01">Jan 01, 2022</time>
-                    </a>
+                    </Link>
 
-                    <a href="#" className="card-meta-link">
+                    <Link href="#" className="card-meta-link">
                       <ion-icon name="person-outline"></ion-icon>
                       <p className="meta-info">Jonathan Smith</p>
-                    </a>
+                    </Link>
                   </div>
 
                   <h3 className="h3">
-                    <a href="#" className="card-title">Making Chicken Strips With New Delicious Ingredients</a>
+                    <Link href="#" className="card-title">Making Chicken Strips With New Delicious Ingredients</Link>
                   </h3>
                   <p className="card-text">
                     Financial experts support or help you to find out which way you can raise your funds more...
                   </p>
 
-                  <a href="#" className="btn-link">
+                  <Link href="#" className="btn-link">
                     <span>Read More</span>
                     <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </li>
@@ -146,28 +148,28 @@ function Home() {
 
                 <div className="card-content">
                   <div className="card-meta-wrapper">
-                    <a href="#" className="card-meta-link">
+                    <Link href="#" className="card-meta-link">
                       <ion-icon name="calendar-outline"></ion-icon>
                       <time className="meta-info" dateTime="2022-01-01">Jan 01, 2022</time>
-                    </a>
+                    </Link>
 
-                    <a href="#" className="card-meta-link">
+                    <Link href="#" className="card-meta-link">
                       <ion-icon name="person-outline"></ion-icon>
                       <p className="meta-info">Jonathan Smith</p>
-                    </a>
+                    </Link>
                   </div>
 
                   <h3 className="h3">
-                    <a href="#" className="card-title">Innovative Hot Cheesy Pasta Make Creator Fact</a>
+                    <Link href="#" className="card-title">Innovative Hot Cheesy Pasta Make Creator Fact</Link>
                   </h3>
                   <p className="card-text">
                     Financial experts support or help you to find out which way you can raise your funds more...
                   </p>
 
-                  <a href="#" className="btn-link">
+                  <Link href="#" className="btn-link">
                     <span>Read More</span>
                     <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </li>

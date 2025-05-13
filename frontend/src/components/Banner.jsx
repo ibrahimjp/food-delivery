@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
@@ -85,9 +86,9 @@ const Banner = () => {
                 <div className="banner-item-content">
                   <h3 className="banner-title">Tasty Buzzed Pizza</h3>
                   <p className="banner-text">Sale off 50% only this week</p>
-                 <a href="/contact">
+                 <Link href="/contact">
                   <button className="ui-button">Contact Us</button>
-                  </a> 
+                  </Link> 
                 </div>
               </div>
             </li>

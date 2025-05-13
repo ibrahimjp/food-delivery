@@ -1,6 +1,7 @@
 import React from "react";
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import { Link } from "react-router-dom";
 const Blog = () => {
   return (
     <div>
@@ -37,28 +38,28 @@ const Blog = () => {
 
                 <div className="card-content">
                   <div className="card-meta-wrapper">
-                    <a href="#" className="card-meta-link">
+                    <Link href="#" className="card-meta-link">
                       <ion-icon name="calendar-outline"></ion-icon>
                       <time className="meta-info" dateTime="2022-01-01">Jan 01, 2022</time>
-                    </a>
+                    </Link>
 
-                    <a href="#" className="card-meta-link">
+                    <Link href="#" className="card-meta-link">
                       <ion-icon name="person-outline"></ion-icon>
                       <p className="meta-info">Jonathan Smith</p>
-                    </a>
+                    </Link>
                   </div>
 
                   <h3 className="h3">
-                    <a href="#" className="card-title">What Do You Think About Cheese Pizza Recipes?</a>
+                    <Link href="#" className="card-title">What Do You Think About Cheese Pizza Recipes?</Link>
                   </h3>
                   <p className="card-text">
                     Cheese pizza recipes are classic, simple, and versatile. They serve as a perfect base to experiment with different types of cheese, herbs, and sauces.
                   </p>
 
-                  <a href="#" className="btn-link">
+                  <Link href="#" className="btn-link">
                     <span>Read More</span>
                     <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </li>
@@ -80,19 +81,19 @@ const Blog = () => {
 
                 <div className="card-content">
                   <div className="card-meta-wrapper">
-                    <a href="#" className="card-meta-link">
+                    <Link href="#" className="card-meta-link">
                       <ion-icon name="calendar-outline"></ion-icon>
                       <time className="meta-info" dateTime="2022-01-01">Jan 01, 2022</time>
-                    </a>
+                    </Link>
 
-                    <a href="#" className="card-meta-link">
+                    <Link href="#" className="card-meta-link">
                       <ion-icon name="person-outline"></ion-icon>
                       <p className="meta-info">Jonathan Smith</p>
-                    </a>
+                    </Link>
                   </div>
 
                   <h3 className="h3">
-                    <a href="#" className="card-title">Making Chicken Strips With New Delicious Ingredients</a>
+                    <Link href="#" className="card-title">Making Chicken Strips With New Delicious Ingredients</Link>
                   </h3>
                   <p className="card-text">
                     500g chicken breast, cut into strips
@@ -110,10 +111,10 @@ const Blog = () => {
                     1 tsp smoked paprika
                   </p>
 
-                  <a href="#" className="btn-link">
+                  <Link href="#" className="btn-link">
                     <span>Read More</span>
                     <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </li>
@@ -135,19 +136,19 @@ const Blog = () => {
 
                 <div className="card-content">
                   <div className="card-meta-wrapper">
-                    <a href="#" className="card-meta-link">
+                    <Link href="#" className="card-meta-link">
                       <ion-icon name="calendar-outline"></ion-icon>
                       <time className="meta-info" dateTime="2022-01-01">Jan 01, 2022</time>
-                    </a>
+                    </Link>
 
-                    <a href="#" className="card-meta-link">
+                    <Link href="#" className="card-meta-link">
                       <ion-icon name="person-outline"></ion-icon>
                       <p className="meta-info">Jonathan Smith</p>
-                    </a>
+                    </Link>
                   </div>
 
                   <h3 className="h3">
-                    <a href="#" className="card-title">Innovative Hot Cheesy Pasta Make Creator Fact</a>
+                    <Link href="#" className="card-title">Innovative Hot Cheesy Pasta Make Creator Fact</Link>
                   </h3>
                   <p className="card-text">
                     Pasta originated in Italy and is traditionally made from durum wheat.
@@ -161,10 +162,10 @@ const Blog = () => {
 
                   </p>
 
-                  <a href="#" className="btn-link">
+                  <Link href="#" className="btn-link">
                     <span>Read More</span>
                     <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </li>

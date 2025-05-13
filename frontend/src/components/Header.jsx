@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Preloader from './Preloader';
-
+import { Link } from 'react-router-dom';
 const Header = () => {
   const [loading, setLoading] = useState(true);
   const [menu, setMenu] = useState("home");
@@ -31,7 +31,7 @@ const Header = () => {
             <div className="container">
 
               <h1>
-                <a href="/" className="logo">Foodie<span className="span">.</span></a>
+                <Link href="/" className="logo">Foodie<span className="span">.</span></Link>
               </h1>
 
               <nav className="navbar" data-navbar>
@@ -40,35 +40,35 @@ const Header = () => {
                     onClick={() => setMenu("home")}
                     className={`nav-item ${menu === "home" ? "active" : ""}`} 
                   >
-                    <a href="/" className="navbar-link" data-nav-link>Home</a>
+                    <Link href="/" className="navbar-link" data-nav-link>Home</Link>
                   </li>
 
                   <li 
                     onClick={() => setMenu("about")}
                     className={`nav-item ${menu === "about" ? "active" : ""}`} 
                   >
-                    <a href="/about" className="navbar-link" data-nav-link>About Us</a>
+                    <Link href="/about" className="navbar-link" data-nav-link>About Us</Link>
                   </li>
 
                   <li 
                     onClick={() => setMenu("shop")}
                     className={`nav-item ${menu === "shop" ? "active" : ""}`} 
                   >
-                    <a href="/shop" className="navbar-link" data-nav-link>Shop</a>
+                    <Link href="/shop" className="navbar-link" data-nav-link>Shop</Link>
                   </li>
 
                   <li 
                     onClick={() => setMenu("blog")}
                     className={`nav-item ${menu === "blog" ? "active" : ""}`} 
                     >
-                    <a href="/blog" className="navbar-link" data-nav-link>Blog</a>
+                    <Link href="/blog" className="navbar-link" data-nav-link>Blog</Link>
                   </li>
 
                   <li 
                     onClick={() => setMenu("contact")}
                     className={`nav-item ${menu === "contact" ? "active" : ""}`} 
                   >
-                    <a href="/contact-us" className="navbar-link" data-nav-link>Contact Us</a>
+                    <Link href="/contact-us" className="navbar-link" data-nav-link>Contact Us</Link>
                   </li>
                 </ul>
               </nav>

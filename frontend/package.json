@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview --port $PORT",
+    "start": "vite preview --port $PORT",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
@@ -18,9 +19,11 @@
     "@tailwindcss/vite": "^4.1.6",
     "axios": "^1.9.0",
     "cors": "^2.8.5",
+    "express": "^5.1.0",
     "framer-motion": "^12.11.0",
     "ionic": "^5.4.16",
     "ionicons": "^8.0.8",
+    "path": "^0.12.7",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-icons": "^5.5.0",

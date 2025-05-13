@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Cta = () => {
   return (
@@ -20,9 +21,9 @@ const Cta = () => {
               the Jurchen invasion of the 1120s, while it is also known that many restaurants were run by families.
             </p>
 
-            <a href="/shop">
+            <Link href="/shop">
           <button className="ui-button">Browse All The Items Now</button>
-          </a>
+          </Link>
           </div>
 
           <figure className="cta-banner">

@@ -1,5 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
+a
 const Footer = () => {
   return (
     <footer className="footer">
@@ -10,7 +12,7 @@ const Footer = () => {
 
           {/* Brand Section */}
           <div className="footer-brand">
-            <a href="#" className="logo">Foodie<span className="span">.</span></a>
+            <Link href="#" className="logo">Foodie<span className="span">.</span></Link>
             <p className="footer-text">
               Financial experts support or help you to find out which way you can raise your funds more.
             </p>
@@ -18,9 +20,9 @@ const Footer = () => {
             {/* Social Links */}
             <ul className="social-list">
               <li>
-                <a href="#" className="social-link" aria-label="Instagram">
+                <Link href="#" className="social-link" aria-label="Instagram">
                 <FontAwesomeIcon icon="fa-brands fa-instagram" />
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="#" className="social-link" aria-label="Linkedin">
@@ -28,14 +30,14 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="social-link" aria-label="Facebook">
+                <Link href="#" className="social-link" aria-label="Facebook">
                 <FontAwesomeIcon icon="fa-brands fa-facebook" />
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="social-link" aria-label="Twitter">
+                <Link href="#" className="social-link" aria-label="Twitter">
                 <FontAwesomeIcon icon="fa-brands fa-twitter" />
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
