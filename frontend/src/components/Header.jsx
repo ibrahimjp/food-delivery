@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Preloader from './Preloader';
 import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 const Header = () => {
   const [loading, setLoading] = useState(true);
   const [menu, setMenu] = useState("home");
@@ -31,7 +32,7 @@ const Header = () => {
             <div className="container">
 
               <h1>
-                <Link href="/" className="logo">Foodie<span className="span">.</span></Link>
+                <NavLink to="/" className="logo">Foodie<span className="span">.</span></NavLink>
               </h1>
 
               <nav className="navbar" data-navbar>
@@ -40,35 +41,35 @@ const Header = () => {
                     onClick={() => setMenu("home")}
                     className={`nav-item ${menu === "home" ? "active" : ""}`} 
                   >
-                    <Link href="/" className="navbar-link" data-nav-link>Home</Link>
+                    <NavLink to="/" className={(e) => {return e.isActive ? "navbar-link active" : "navbar-link"}} data-nav-link>Home</NavLink>
                   </li>
 
                   <li 
                     onClick={() => setMenu("about")}
                     className={`nav-item ${menu === "about" ? "active" : ""}`} 
                   >
-                    <Link href="/about" className="navbar-link" data-nav-link>About Us</Link>
+                    <NavLink to="/about" className={(e) => {return e.isActive ? "navbar-link active" : "navbar-link"}} data-nav-link>About Us</NavLink>
                   </li>
 
                   <li 
                     onClick={() => setMenu("shop")}
                     className={`nav-item ${menu === "shop" ? "active" : ""}`} 
                   >
-                    <Link href="/shop" className="navbar-link" data-nav-link>Shop</Link>
+                    <NavLink to="/shop" className={(e) => {return e.isActive ? "navbar-link active" : "navbar-link"}} data-nav-link>Shop</NavLink>
                   </li>
 
                   <li 
                     onClick={() => setMenu("blog")}
                     className={`nav-item ${menu === "blog" ? "active" : ""}`} 
                     >
-                    <Link href="/blog" className="navbar-link" data-nav-link>Blog</Link>
+                    <NavLink to="/blog" className={(e) => {return e.isActive ? "navbar-link active" : "navbar-link"}} data-nav-link>Blog</NavLink>
                   </li>
 
                   <li 
                     onClick={() => setMenu("contact")}
                     className={`nav-item ${menu === "contact" ? "active" : ""}`} 
                   >
-                    <Link href="/contact-us" className="navbar-link" data-nav-link>Contact Us</Link>
+                    <NavLink to="/contact-us" className={(e) => {return e.isActive ? "navbar-link active" : "navbar-link"}} data-nav-link>Contact Us</NavLink>
                   </li>
                 </ul>
               </nav>

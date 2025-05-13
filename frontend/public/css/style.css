@@ -1933,4 +1933,10 @@ Pre-loader Style
   color: #fff;
 }
 
-
+.active{
+  color: #FF9D2E;
+  border-color: #000;
+  text-decoration: underline;
+  text-underline-offset: 4px; 
+  font-weight: 600;
+}
