@@ -32,7 +32,15 @@ const Shop = ({url}) => {
   useEffect(()=>{
     fecthFood();
   },[])
-  const filters = ['All', 'Pizza', 'Burger', 'Drinks', 'Sandwich']
+  const filters = [
+  "Sandwich",
+  "Fries",
+  "Chinese",
+  "Burger",
+  "Pizza",
+  "Rolls",
+  "Desserts",
+  "Garlic Bread"]
   return (
     <div>
       <Header/>
