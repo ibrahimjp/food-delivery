@@ -21,7 +21,7 @@ const Cta = () => {
               the Jurchen invasion of the 1120s, while it is also known that many restaurants were run by families.
             </p>
 
-            <Link href="/shop">
+            <Link to="/shop">
           <button className="ui-button">Browse All The Items Now</button>
           </Link>
           </div>

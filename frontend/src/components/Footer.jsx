@@ -12,7 +12,7 @@ const Footer = () => {
 
           {/* Brand Section */}
           <div className="footer-brand">
-            <Link href="#" className="logo">Foodie<span className="span">.</span></Link>
+            <Link to="#" className="logo">Foodie<span className="span">.</span></Link>
             <p className="footer-text">
               Financial experts support or help you to find out which way you can raise your funds more.
             </p>
@@ -20,22 +20,22 @@ const Footer = () => {
             {/* Social Links */}
             <ul className="social-list">
               <li>
-                <Link href="#" className="social-link" aria-label="Instagram">
+                <Link to="#" className="social-link" aria-label="Instagram">
                 <FontAwesomeIcon icon="fa-brands fa-instagram" />
                 </Link>
               </li>
               <li>
-                <a href="#" className="social-link" aria-label="Linkedin">
+                <a to="#" className="social-link" aria-label="Linkedin">
                 <FontAwesomeIcon icon="fa-brands fa-linkedin" />
                 </a>
               </li>
               <li>
-                <Link href="#" className="social-link" aria-label="Facebook">
+                <Link to="#" className="social-link" aria-label="Facebook">
                 <FontAwesomeIcon icon="fa-brands fa-facebook" />
                 </Link>
               </li>
               <li>
-                <Link href="#" className="social-link" aria-label="Twitter">
+                <Link to="#" className="social-link" aria-label="Twitter">
                 <FontAwesomeIcon icon="fa-brands fa-twitter" />
                 </Link>
               </li>
@@ -68,7 +68,7 @@ const Footer = () => {
       <div className="footer-bottom">
         <div className="container">
           <p className="copyright-text">
-            &copy; 2022 <a href="#" className="copyright-link">codewithsadee</a> All Rights Reserved.
+            &copy; 2022 <Link to="#" className="copyright-link">codewithsadee</Link> All Rights Reserved.
           </p>
         </div>
       </div>

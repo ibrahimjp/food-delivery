@@ -86,7 +86,7 @@ const Banner = () => {
                 <div className="banner-item-content">
                   <h3 className="banner-title">Tasty Buzzed Pizza</h3>
                   <p className="banner-text">Sale off 50% only this week</p>
-                 <Link href="/contact">
+                 <Link to="/contact">
                   <button className="ui-button">Contact Us</button>
                   </Link> 
                 </div>
