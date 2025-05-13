@@ -1,10 +1,31 @@
 import React from 'react'
 import Preloader from './Preloader'
-
+import { useState, useEffect } from 'react';
 const Header = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const handleLoad = () => {
+      setLoading(false);
+    };
+
+    if (document.readyState === 'complete') {
+      setLoading(false);
+    } else {
+      window.addEventListener('load', handleLoad);
+    }
+    return () => {
+      window.removeEventListener('load', handleLoad);
+    };
+  }, []);
   return (
     <>
-    <Preloader />
+    {/* Corrected conditional rendering using ternary operator */}
+    {loading ? (
+      <Preloader />
+    ) : (
+      <>
+
     <header class="header"style={{backgroundColor:"#780B10"}} data-header>
     <div class="container">
 
@@ -53,6 +74,8 @@ const Header = () => {
 
     </div>
   </header>
+      </>
+    )}
     </>
   )
 }

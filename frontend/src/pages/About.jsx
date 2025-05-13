@@ -36,8 +36,7 @@ const About = () => {
             </h2>
 
             <p className="section-text">
-              The restaurants in Hangzhou also catered to many northern Chinese who had fled south from Kaifeng during
-              the Jurchen invasion of the 1120s, while it is also known that many restaurants were run by families.
+            Welcome to Cheesy Bites & More, where every bite tells a story of rich, cheesy goodness! We bring you the finest selection of mouthwatering pizzas, crispy chicken strips, and creamy, flavorful pasta – all crafted to perfection.
             </p>
 
             <ul className="about-list">
@@ -48,17 +47,17 @@ const About = () => {
 
               <li className="about-item">
                 <IonIcon icon={checkmarkOutline} />
-                <span className="span">Spacific Family And Kids Zone</span>
+                <span className="span">Tasty Food</span>
               </li>
 
               <li className="about-item">
                 <IonIcon icon={checkmarkOutline} />
-                <span className="span">Music & Other Facilities</span>
+                <span className="span">Calling Support</span>
               </li>
 
               <li className="about-item">
                 <IonIcon icon={checkmarkOutline} />
-                <span className="span">Fastest Food Home Delivery</span>
+                <span className="span">HomeMade Food</span>
               </li>
             </ul>
 

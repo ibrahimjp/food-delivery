@@ -24,13 +24,13 @@ const Blog = () => {
             <li>
               <div className="blog-card">
                 <div className="card-banner">
-                  <img 
-                    src="./images/blog-1.jpg" 
-                    width="600" 
-                    height="390" 
+                  <img
+                    src="./images/blog-1.jpg"
+                    width="600"
+                    height="390"
                     loading="lazy"
-                    alt="Cheese Pizza Recipes" 
-                    className="w-100" 
+                    alt="Cheese Pizza Recipes"
+                    className="w-100"
                   />
                   <div className="badge">Pizza</div>
                 </div>
@@ -52,7 +52,7 @@ const Blog = () => {
                     <a href="#" className="card-title">What Do You Think About Cheese Pizza Recipes?</a>
                   </h3>
                   <p className="card-text">
-                    Financial experts support or help you to find out which way you can raise your funds more...
+                    Cheese pizza recipes are classic, simple, and versatile. They serve as a perfect base to experiment with different types of cheese, herbs, and sauces.
                   </p>
 
                   <a href="#" className="btn-link">
@@ -67,13 +67,13 @@ const Blog = () => {
             <li>
               <div className="blog-card">
                 <div className="card-banner">
-                  <img 
-                    src="./images/blog-2.jpg" 
-                    width="600" 
-                    height="390" 
+                  <img
+                    src="./images/blog-2.jpg"
+                    width="600"
+                    height="390"
                     loading="lazy"
-                    alt="Chicken Strips Recipe" 
-                    className="w-100" 
+                    alt="Chicken Strips Recipe"
+                    className="w-100"
                   />
                   <div className="badge">Burger</div>
                 </div>
@@ -95,7 +95,19 @@ const Blog = () => {
                     <a href="#" className="card-title">Making Chicken Strips With New Delicious Ingredients</a>
                   </h3>
                   <p className="card-text">
-                    Financial experts support or help you to find out which way you can raise your funds more...
+                    500g chicken breast, cut into strips
+
+                    1 cup buttermilk
+
+                    1 tbsp hot sauce (optional)
+
+                    1 cup flour
+
+                    1/2 cup panko breadcrumbs
+
+                    1/2 cup crushed cornflakes (for extra crunch)
+
+                    1 tsp smoked paprika
                   </p>
 
                   <a href="#" className="btn-link">
@@ -110,13 +122,13 @@ const Blog = () => {
             <li>
               <div className="blog-card">
                 <div className="card-banner">
-                  <img 
-                    src="./images/blog-3.jpg" 
-                    width="600" 
-                    height="390" 
+                  <img
+                    src="./images/blog-3.jpg"
+                    width="600"
+                    height="390"
                     loading="lazy"
-                    alt="Cheesy Pasta Recipe" 
-                    className="w-100" 
+                    alt="Cheesy Pasta Recipe"
+                    className="w-100"
                   />
                   <div className="badge">Chicken</div>
                 </div>
@@ -138,7 +150,15 @@ const Blog = () => {
                     <a href="#" className="card-title">Innovative Hot Cheesy Pasta Make Creator Fact</a>
                   </h3>
                   <p className="card-text">
-                    Financial experts support or help you to find out which way you can raise your funds more...
+                    Pasta originated in Italy and is traditionally made from durum wheat.
+
+                    Adding cream cheese to pasta sauce creates a rich, creamy texture.
+
+                    Sun-dried tomatoes intensify the flavor of pasta dishes.
+
+                    Parmesan cheese enhances umami and provides a salty, nutty taste.
+
+
                   </p>
 
                   <a href="#" className="btn-link">

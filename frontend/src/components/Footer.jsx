@@ -56,21 +56,6 @@ const Footer = () => {
             </li>
           </ul>
 
-          {/* Opening Hours */}
-          <ul className="footer-list">
-            <li>
-              <p className="footer-list-title">Opening Hours</p>
-            </li>
-            <li>
-              <p className="footer-list-item">Monday-Friday: 08:00-22:00</p>
-            </li>
-            <li>
-              <p className="footer-list-item">Tuesday 4PM: Till Mid Night</p>
-            </li>
-            <li>
-              <p className="footer-list-item">Saturday: 10:00-16:00</p>
-            </li>
-          </ul>
 
           {/* Booking Form */}
           
