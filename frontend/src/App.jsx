@@ -10,7 +10,6 @@ const App = () => {
   const [isHome, setIsHome] = React.useState(true);
     const url = "https://jamilafood.onrender.com"
   return (
-    <Router>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -18,7 +17,6 @@ const App = () => {
         <Route path="/blog" element={<Blog />} />
         <Route path="/contact-us" element={<Contact />} />
       </Routes>
-    </Router>
   );
 };
 
