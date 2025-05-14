@@ -14,18 +14,16 @@ import Preloader from '../components/Preloader'
 import SearchBox from '../components/SearchBox'
 import { Link } from 'react-router-dom'
 
-function Home() {
-  const url="https://jamilafood.onrender.com"
+function Home({phoneNumber}) {
   return (
     <>
-    
           <Header />
-            <SearchBox />
+            <SearchBox  />
           <main>
-            <Hero />
+            <Hero phoneNumber={phoneNumber} />
             <Promo />
-            <Cta />
-            <Delivery />
+            <Cta phoneNumber={phoneNumber} />
+            <Delivery phoneNumber={phoneNumber} />
             <Testimonials />
             <Banner />
 

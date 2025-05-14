@@ -48,7 +48,7 @@ const Footer = () => {
               <p className="footer-list-title">Contact Info</p>
             </li>
             <li>
-              <p className="footer-list-item">+1 (062) 109-9222</p>
+              <p className="footer-list-item">+91 8690120453</p>
             </li>
             <li>
               <p className="footer-list-item">Info@YourGmail24.com</p>

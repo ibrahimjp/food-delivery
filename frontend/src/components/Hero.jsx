@@ -1,5 +1,5 @@
 import React from "react";
-const Hero = () => {
+const Hero = ({phonenumber}) => {
   return (
     <section
       className="hero"

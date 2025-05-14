@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Delivery = () => {
+const Delivery = ({phoneNumber}) => {
   return (
     <div>
       <section className="section section-divider gray delivery">
@@ -16,7 +16,7 @@ const Delivery = () => {
               the Jurchen invasion of the 1120s, while it is also known that many restaurants were run by families.
             </p>
 
-            <button className="btn btn-hover">Order Now</button>
+            <button onClick={() => window.location.href = `tel:${phoneNumber}`} className="btn btn-hover">Order Now</button>
           </div>
 
           <figure className="delivery-banner">

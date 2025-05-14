@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Banner = () => {
+const Banner = ({phoneNumber}) => {
   return (
     <div>
       <section className="section section-divider gray banner">
@@ -26,7 +26,7 @@ const Banner = () => {
                   <p className="banner-subtitle">50% Off Now!</p>
                   <h3 className="banner-title">Discount For Delicious Tasty Burgers!</h3>
                   <p className="banner-text">Sale off 50% only this week</p>
-                  <button className="ui-button">Contact Us</button>
+                  <button onClick={() => window.location.href = `tel:${phoneNumber}`} className="ui-button">Contact Us</button>
                 </div>Contact Us
               </div>
             </li>
@@ -46,7 +46,7 @@ const Banner = () => {
                 <div className="banner-item-content">
                   <h3 className="banner-title">Delicious Pizza</h3>
                   <p className="banner-text">50% off Now</p>
-                  <button className="ui-button">Contact Us</button>
+                  <button onClick={() => window.location.href = `tel:${phoneNumber}`} className="ui-button">Contact Us</button>
                 </div>
               </div>
             </li>
@@ -66,7 +66,7 @@ const Banner = () => {
                 <div className="banner-item-content">
                   <h3 className="banner-title">American Burgers</h3>
                   <p className="banner-text">50% off Now</p>
-                  <button className="ui-button">Contact Us</button>
+                  <button onClick={() => window.location.href = `tel:${phoneNumber}`} className="ui-button">Contact Us</button>
                 </div>
               </div>
             </li>
@@ -87,7 +87,7 @@ const Banner = () => {
                   <h3 className="banner-title">Tasty Buzzed Pizza</h3>
                   <p className="banner-text">Sale off 50% only this week</p>
                  <Link to="/contact">
-                  <button className="ui-button">Contact Us</button>
+                  <button onClick={() => window.location.href = `tel:${phoneNumber}`} className="ui-button">Contact Us</button>
                   </Link> 
                 </div>
               </div>

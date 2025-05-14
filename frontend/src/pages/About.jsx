@@ -3,7 +3,7 @@ import { IonIcon } from '@ionic/react';
 import { checkmarkOutline } from 'ionicons/icons';
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-const About = () => {
+const About = ({phoneNumber}) => {
   return (
     <div>
       <Header />

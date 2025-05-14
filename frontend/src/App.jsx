@@ -7,14 +7,14 @@ import Contact from './pages/Contact';
 
 const App = () => {
   const url = "https://jamilafood.onrender.com";
-
+  const phoneNumber = "+918690120453"; 
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/shop" element={<Shop url={url} />} />
-      <Route path="/blog" element={<Blog />} />
-      <Route path="/contact-us" element={<Contact />} />
+      <Route path="/" element={<Home phoneNumber={phoneNumber} />} />
+      <Route path="/about" element={<About phoneNumber={phoneNumber} />} />
+      <Route path="/shop" element={<Shop url={url} phoneNumber={phoneNumber} />} />
+      <Route path="/blog" element={<Blog />} phoneNumber={phoneNumber} />
+      <Route path="/contact-us" element={<Contact phoneNumber={phoneNumber} />} />
     </Routes>
   );
 };

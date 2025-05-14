@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 import axios from "axios";
 import Preloader from '../components/Preloader';
 import { toast } from 'react-toastify';
-const Shop = ({ url }) => {
+const Shop = ({ url, phoneNumber }) => {
   const [list, setList] = useState([]);
   const [activeFilter, setActiveFilter] = useState('All');
   const [loading, setLoading] = useState(true);
@@ -102,13 +102,13 @@ const Shop = ({ url }) => {
                           alt={item.title}
                           style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                         />
-                        
+                        {item.discount !== 0 && (
                           <div className="badge">
                             -{item.discount}%
                           </div>
-                       
+                        )}
 
-                        <button className="btn food-menu-btn">Order Now</button>
+                        <button onClick={() => window.location.href = `tel:${phoneNumber}`} className="btn food-menu-btn">Order Now</button>
                       </div>
 
                       <div className="wrapper">

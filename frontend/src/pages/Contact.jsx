@@ -14,7 +14,7 @@ const contactVariants = {
   },
 };
 
-const Contact = () => {
+const Contact = ({ phoneNumber }) => {
   return (
     <>
     <div className="contact-container">
@@ -34,7 +34,7 @@ const Contact = () => {
             <motion.div className="contact-card" whileHover={{ scale: 1.05 }}>
               <FaPhone className="contact-icon" />
               <h2 className="contact-heading">Phone</h2>
-              <p>+1 (062) 109-9222</p>
+              <p>+91 8690120453</p>
             </motion.div>
 
             <motion.div className="contact-card" whileHover={{ scale: 1.05 }}>
