@@ -306,14 +306,6 @@
     font-weight: var(--fw-500);
   }
   
-  .badge {
-    position: absolute;
-    background: var(--bg-color, var(--cinnabar));
-    color: var(--white);
-    font-size: var(--fs-5);
-    font-weight: var(--fw-600);
-    padding: var(--padding-block, 2px) 15px;
-  }
   
   .rating-wrapper {
     display: flex;
@@ -747,10 +739,7 @@
     margin-inline: auto;
   }
   
-  .food-menu-card .badge {
-    top: 0;
-    left: 0;
-  }
+
   
   .food-menu-btn {
     position: absolute;
@@ -1939,4 +1928,18 @@ Pre-loader Style
   text-decoration: underline;
   text-underline-offset: 4px; 
   font-weight: 600;
+}
+
+.badge {
+  position: absolute;
+  background: var(--bg-color, var(--cinnabar));
+  color: var(--white);
+  font-size: var(--fs-5);
+  font-weight: var(--fw-600);
+  padding: var(--padding-block, 2px) 15px;
+}
+
+.food-menu-card .badge {
+  top: 0;
+  left: 0;
 }

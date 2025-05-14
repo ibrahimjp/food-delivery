@@ -98,13 +98,16 @@ const Shop = ({ url }) => {
                       <div className="card-banner">
                         <img
                           src={`${url}/images/${item.image}`}
-                          width="300"
-                          height="300"
                           loading="lazy"
                           alt={item.title}
-                          className="w-100"
+                          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                         />
-                        {item.discount && <div className="badge">-{item.discount}%</div>}
+                        
+                          <div className="badge">
+                            -{item.discount}%
+                          </div>
+                       
+
                         <button className="btn food-menu-btn">Order Now</button>
                       </div>
 
@@ -117,13 +120,13 @@ const Shop = ({ url }) => {
                         </div>
                       </div>
 
-                      <h3 className="h3 card-title">{item.title}</h3>
+                      <h3 className="h3 card-title">{item.name}</h3>
 
                       <div className="price-wrapper">
                         <p className="price-text">Price:</p>
-                        <data className="price">${item.price.toFixed(2)}</data>
+                        <data className="price">₹{item.price.toFixed(2)}</data>
                         {item.originalPrice && (
-                          <del className="del">${item.originalPrice.toFixed(2)}</del>
+                          <del className="del">₹{item.originalPrice.toFixed(2)}</del>
                         )}
                       </div>
                     </div>
