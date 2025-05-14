@@ -2,7 +2,7 @@ import React from 'react'
 import './Preloader.css'
 const Preloader = () => {
   return (
-    <div className='siu'>
+    <div id="js-preloader" class="js-preloader">
       <div class="main">
   <svg
     width="168"

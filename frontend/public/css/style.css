@@ -722,7 +722,7 @@
   
   .filter-btn.active {
     background-color: var(--deep-saffron);
-    --color: var(--white);
+   color: #000;
     --border-color: var(--deep-saffron);
   }
   
