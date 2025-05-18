@@ -26,6 +26,53 @@ const addFood = async (req,res) => {
     }
 }
 
+//get data for a particular id and update 
+const geteditFoodList = async (req, res) => {
+    // console.log(req.params.id);
+    try {
+        const food = await foodModel.findById(req.params.id);
+        if (!food) {
+            return res.status(404).json({ success: false, message: "Food item not found" });
+        }
+        res.json({ success: true, data: food });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ success: false, message: "Server error" });
+    }
+};
+
+//edit food item 
+const editFood = async (req,res) => {
+    try {
+        const { id } = req.params;
+        const { name, originalPrice, discount, description, price, category } = req.body;
+        const image = req.file ? req.file.filename : null;
+    
+        const updateData = {
+          name,
+          originalPrice,
+          discount,
+          description,
+          price,
+          category,
+        };
+    
+        if (image) {
+          updateData.image = image;
+        }
+    
+        const updatedFood = await foodModel.findByIdAndUpdate(id, updateData, { new: true });
+    
+        if (!updatedFood) {
+          return res.status(404).json({ success: false, message: "Food item not found" });
+        }
+    
+        res.json({ success: true, data: updatedFood, message: "Food item updated successfully" });
+      } catch (error) {
+        console.log(error);
+        res.status(500).json({ success: false, message: "Server error" });
+      }
+}
 // all food list
 const listFood = async (req,res) => {
     try {
@@ -52,4 +99,4 @@ const removeFood = async (req,res) => {
 }
 
 
-export {addFood,listFood,removeFood}
+export {addFood,listFood,removeFood,editFood,geteditFoodList}
