@@ -30,7 +30,7 @@ const List = ({ url }) => {
   }
 
   const editFood = (foodId) => {
-    window.location.href = `/edit/${foodId}`;
+    window.location.href = `${url}/edit/${foodId}`;
   }
 
 
