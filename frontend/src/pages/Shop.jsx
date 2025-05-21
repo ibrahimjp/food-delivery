@@ -98,7 +98,7 @@ const Shop = ({ url, phoneNumber }) => {
                     <div className="food-menu-card">
                       <div className="card-banner">
                         <img
-                          src={`${url}/images/${item.image}`}
+                          src={`${item.image}`}
                           loading="lazy"
                           alt={item.title}
                           style={{ width: '100%', height: '100%', objectFit: 'cover' }}
