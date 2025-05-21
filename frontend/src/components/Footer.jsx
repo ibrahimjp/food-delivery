@@ -12,31 +12,31 @@ const Footer = () => {
 
           {/* Brand Section */}
           <div className="footer-brand">
-            <Link to="#" className="logo">Foodie<span className="span">.</span></Link>
+            <Link to="#" className="logo">FlavourFull Fusion<span className="span">.</span></Link>
             <p className="footer-text">
-              Financial experts support or help you to find out which way you can raise your funds more.
+              Crafted with passion,served with love ❤
             </p>
 
             {/* Social Links */}
             <ul className="social-list">
               <li>
                 <Link to="#" className="social-link" aria-label="Instagram">
-                <FontAwesomeIcon icon="fa-brands fa-instagram" />
+                  <FontAwesomeIcon icon="fa-brands fa-instagram" />
                 </Link>
               </li>
               <li>
                 <a to="#" className="social-link" aria-label="Linkedin">
-                <FontAwesomeIcon icon="fa-brands fa-linkedin" />
+                  <FontAwesomeIcon icon="fa-brands fa-linkedin" />
                 </a>
               </li>
               <li>
                 <Link to="#" className="social-link" aria-label="Facebook">
-                <FontAwesomeIcon icon="fa-brands fa-facebook" />
+                  <FontAwesomeIcon icon="fa-brands fa-facebook" />
                 </Link>
               </li>
               <li>
                 <Link to="#" className="social-link" aria-label="Twitter">
-                <FontAwesomeIcon icon="fa-brands fa-twitter" />
+                  <FontAwesomeIcon icon="fa-brands fa-twitter" />
                 </Link>
               </li>
             </ul>
@@ -51,16 +51,17 @@ const Footer = () => {
               <p className="footer-list-item">+91 8690120453</p>
             </li>
             <li>
-              <p className="footer-list-item">Info@YourGmail24.com</p>
+              <p className="footer-list-item">jpjamila2@gmail.com</p>
             </li>
             <li>
-              <address className="footer-list-item">153 Williamson Plaza, Maggieberg, MT 09514</address>
+              <address className="footer-list-item">Rajendra Nagar,
+                Near bsnl tower , pratapgarh (raj)</address>
             </li>
           </ul>
 
 
           {/* Booking Form */}
-          
+
         </div>
       </div>
 

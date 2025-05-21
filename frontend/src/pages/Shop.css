@@ -1,0 +1,23 @@
+.order-options {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+}
+
+.order-link {
+  margin: 5px 0;
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.order-link:hover {
+  color: #ff5722;
+}

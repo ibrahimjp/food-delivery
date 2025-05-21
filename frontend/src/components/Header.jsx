@@ -52,7 +52,7 @@ const Header = () => {
 
 
                 <h1>
-                  <NavLink to="/" className="logo">Foodie<span className="span">.</span></NavLink>
+                  <NavLink to="/" className="logo">FlavourFull Fusion<span className="span">.</span></NavLink>
                 </h1>
 
                 <nav className="navbar" data-navbar>

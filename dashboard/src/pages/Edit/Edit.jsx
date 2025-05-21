@@ -133,6 +133,11 @@ const Edit = ({ url }) => {
               <option value="Rolls">Rolls</option>
               <option value="Desserts">Desserts</option>
               <option value="Garlic Bread">Garlic Bread</option>
+              <option value="Cup Cakes">Cup Cakes</option>
+              <option value="Cookies">Cookies</option>
+              <option value="Pasta">Pasta</option>
+              <option value="Street Food">Street Food</option>
+              <option value="Parathas">Parathas</option>
             </select>
           </div>
 

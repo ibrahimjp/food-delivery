@@ -4,7 +4,9 @@ import Footer from '../components/Footer';
 import axios from "axios";
 import Preloader from '../components/Preloader';
 import { toast } from 'react-toastify';
+import './Shop.css';
 const Shop = ({ url, phoneNumber }) => {
+  const [selectedItemId, setSelectedItemId] = useState(null);
   const [list, setList] = useState([]);
   const [activeFilter, setActiveFilter] = useState('All');
   const [loading, setLoading] = useState(true);
@@ -12,33 +14,13 @@ const Shop = ({ url, phoneNumber }) => {
   const fetchFood = async () => {
     try {
       const response = await axios.get(`${url}/api/food/list`);
-      console.log(response.data);
       if (response.data.success) {
         setList(response.data.data);
       } else {
         toast.error("Error fetching data");
       }
     } catch (error) {
-      console.error("Error fetching data:", error);
       toast.error("Error fetching data");
-    } finally {
-      setLoading(false); // Ensure loading is false regardless of success or failure
-    }
-  };
-
-  const removeFood = async (foodId) => {
-    try {
-      setLoading(true);
-      const response = await axios.post(`${url}/api/food/remove`, { id: foodId });
-      if (response.data.success) {
-        toast.success(response.data.message);
-        fetchFood(); // Re-fetch data after removal
-      } else {
-        toast.error("Error removing item");
-      }
-    } catch (error) {
-      console.error("Error removing item:", error);
-      toast.error("Error removing item");
     } finally {
       setLoading(false);
     }
@@ -46,18 +28,13 @@ const Shop = ({ url, phoneNumber }) => {
 
   useEffect(() => {
     fetchFood();
-  }, [url]); // Include `url` in the dependency array
+  }, [url]);
 
   const filters = [
-    "All",
-    "Sandwich",
-    "Fries",
-    "Chinese",
-    "Burger",
-    "Pizza",
-    "Rolls",
-    "Desserts",
-    "Garlic Bread",
+    "All", "Sandwich", "Fries", "Chinese",
+    "Burger", "Pizza", "Rolls", "Desserts",
+     "Garlic Bread","Cup Cakes","Cookies","Pasta",
+     "Street Food","Parathas"
   ];
 
   return (
@@ -94,13 +71,13 @@ const Shop = ({ url, phoneNumber }) => {
               {list
                 .filter((item) => activeFilter === 'All' || item.category === activeFilter)
                 .map((item) => (
-                  <li key={item.id}>
+                  <li key={item._id}>
                     <div className="food-menu-card">
                       <div className="card-banner">
                         <img
                           src={`${item.image}`}
                           loading="lazy"
-                          alt={item.title}
+                          alt={item.name}
                           style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                         />
                         {item.discount !== 0 && (
@@ -109,7 +86,35 @@ const Shop = ({ url, phoneNumber }) => {
                           </div>
                         )}
 
-                        <button onClick={() => window.location.href = `tel:${phoneNumber}`} className="btn food-menu-btn">Order Now</button>
+                        <button
+                          onClick={() =>
+                            setSelectedItemId(selectedItemId === item._id ? null : item._id)
+                          }
+                          className="btn food-menu-btn"
+                        >
+                          Order Now
+                        </button>
+
+                        {selectedItemId === item._id && (
+                          <div className="order-options">
+                            <a
+                              href={`tel:${phoneNumber}`}
+                              className="order-link"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              📞 Call Us
+                            </a>
+                            <a
+                              href={`https://wa.me/${phoneNumber}`}
+                              className="order-link"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              💬 WhatsApp
+                            </a>
+                          </div>
+                        )}
                       </div>
 
                       <div className="wrapper">
