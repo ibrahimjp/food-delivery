@@ -1,0 +1,252 @@
+.chat-container {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.robot-wrapper {
+  position: relative;
+  height: 160px;
+  transition: all 0.3s ease;
+  margin-bottom: 6rem;
+  left: 30%;
+}
+@media (max-width: 768px) {
+  .robot-wrapper {
+    height: 100px;
+    margin-bottom: 6rem;
+    left: 40%;
+    transform: scale(0.7); /* Optional: shrink the entire wrapper */
+  }
+
+  .bubble {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+}
+.chat-wrapper {
+  position: relative;
+}
+
+.logo-button {
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.chat-logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 9999px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.chat-logo:hover {
+  transform: scale(1.05);
+}
+
+.chat-panel {
+  position: absolute;
+  bottom: 4rem;
+  right: 0;
+  width: 384px;
+  height: 700px;
+  border-radius: 1rem;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  transform-origin: bottom right;
+}
+
+.chat-panel.closed {
+  transform: scale(0.9);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.chat-panel.open {
+  transform: scale(1);
+  opacity: 1;
+  visibility: visible;
+}
+
+.chat-inner {
+  padding: 1rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.chat-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  color: #4b5563;
+  font-size: 1.75rem;
+  cursor: pointer;
+}
+
+.chat-close:hover {
+  color: #1f2937;
+}
+
+.chat-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.chat-messages {
+  flex: 1;
+  background-color: #f3f4f6;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
+
+.chat-messages p {
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.chat-messages .user-msg {
+  font-size: 0.875rem;
+  text-align: right;
+  color: #4b5563;
+}
+
+.chat-input-area {
+  display: flex;
+  margin-top: auto;
+}
+
+.chat-input {
+  flex: 1;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  outline: none;
+}
+
+.chat-input:focus {
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+.chat-send {
+  margin-left: 0.5rem;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.chat-send:hover {
+  background-color: #1d4ed8;
+}
+
+/* Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.bot{
+  background: #f92e2e;
+  height: 30px;
+  width: 45px;
+  padding: 2px 2px;
+  border-radius: 5px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.bot p{
+  color: #fff;
+  font-size: 15px;
+}
+
+/* Speech bubble with a border */
+
+.bubble {
+    background-color: #eee;
+    border: 2px solid #333;
+    border-radius: 5px;
+    color: #333;
+    display: inline-block;
+    font: 16px/24px sans-serif;
+    padding: 12px 24px;
+    position: relative;
+    top: 40px;
+}
+.bubble:after,
+.bubble:before {
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #eee;
+    bottom: -20px;
+    content: '';
+    left: 60%;
+    margin-left: -20px;
+    position: absolute;
+}
+
+/* Styling for second triangle (border) */
+
+.bubble:before {
+    border-left: 23px solid transparent;
+    border-right: 23px solid transparent;
+    border-top: 23px solid;
+    border-top-color: inherit; /* Can't be included in the shorthand to work */
+    bottom: -23px;
+    margin-left: -23px;
+}
+@media (max-width: 768px) {
+  .bubble {
+    font: 12px/18px sans-serif;
+    padding: 8px 16px;
+    top: 20px;
+  }
+
+  .bubble:after {
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid #eee;
+    bottom: -12px;
+    margin-left: -12px;
+  }
+
+  .bubble:before {
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    border-top: 14px solid;
+    border-top-color: inherit;
+    bottom: -14px;
+    margin-left: -14px;
+  }
+}

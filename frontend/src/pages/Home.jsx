@@ -13,11 +13,12 @@ import Footer from '../components/Footer'
 import Preloader from '../components/Preloader'
 import SearchBox from '../components/SearchBox'
 import { Link } from 'react-router-dom'
-
+import ChatWidget from '../components/ChatWidget/ChatWidget'
 function Home({phoneNumber}) {
   return (
     <>
           <Header />
+          <ChatWidget />
             <SearchBox  />
           <main>
             <Hero phoneNumber={phoneNumber} />
