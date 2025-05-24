@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { MdOutlineClose } from 'react-icons/md';
 import './ChatWidget.css';
-import SplineScene from '../SplineScene';
+import SplineScene from '../SplineScene/SplineScene.jsx';
 
 
 const ChatWidget = () => {

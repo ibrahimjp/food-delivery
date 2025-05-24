@@ -26,7 +26,7 @@ function Home({phoneNumber}) {
             <Cta phoneNumber={phoneNumber} />
             <Delivery phoneNumber={phoneNumber} />
             <Testimonials />
-            <Banner />
+            {/* <Banner /> */}
 
            {/* //Blog menu */}
            <section className="section section-divider white blog" id="blog">

@@ -13,7 +13,7 @@ const Testimonials = () => {
               Our Customers <span className="span">Reviews</span>
             </h2>
             <p className="section-text">
-              Food is any substance consumed to provide nutritional support for an organism.
+              Absolutely delicious! Every bite was packed with flavor. The presentation was top-notch too. Highly recommend!
             </p>
           </header>
 
@@ -24,7 +24,7 @@ const Testimonials = () => {
             <li className="testi-item">
               <div className="testi-card">
                 <div className="profile-wrapper">
-                  <figure className="avatar">
+                  {/* <figure className="avatar">
                     <img 
                       src="./images/avatar-1.jpg" 
                       width="80" 
@@ -32,16 +32,16 @@ const Testimonials = () => {
                       loading="lazy" 
                       alt="Robert William - CEO of Kingfisher" 
                     />
-                  </figure>
+                  </figure> */}
 
                   <div>
-                    <h3 className="h4 testi-name">Robert William</h3>
-                    <p className="testi-title">CEO, Kingfisher</p>
+                    {/* <h3 className="h4 testi-name">Robert William</h3>
+                    <p className="testi-title">CEO, Kingfisher</p> */}
                   </div>
                 </div>
 
                 <blockquote className="testi-text">
-                  "I would be lost without this restaurant. I would like to personally thank you for your outstanding service."
+                  "Perfect for our party! Everyone kept asking where the food was from. Will definitely order again."
                 </blockquote>
 
                 <div className="rating-wrapper">
@@ -56,7 +56,7 @@ const Testimonials = () => {
             <li className="testi-item">
               <div className="testi-card">
                 <div className="profile-wrapper">
-                  <figure className="avatar">
+                  {/* <figure className="avatar">
                     <img 
                       src="./images/avatar-2.jpg" 
                       width="80" 
@@ -64,16 +64,16 @@ const Testimonials = () => {
                       loading="lazy" 
                       alt="Thomas Josef - CEO of Getforce" 
                     />
-                  </figure>
+                  </figure> */}
 
                   <div>
-                    <h3 className="h4 testi-name">Thomas Josef</h3>
-                    <p className="testi-title">CEO, Getforce</p>
+                    {/* <h3 className="h4 testi-name">Thomas Josef</h3>
+                    <p className="testi-title">CEO, Getforce</p> */}
                   </div>
                 </div>
 
                 <blockquote className="testi-text">
-                  "The restaurant has exceeded my expectations. Excellent quality and quick delivery!"
+                  "Timely delivery, generous portions, and amazing taste. Couldn’t ask for more!"
                 </blockquote>
 
                 <div className="rating-wrapper">
@@ -88,7 +88,7 @@ const Testimonials = () => {
             <li className="testi-item">
               <div className="testi-card">
                 <div className="profile-wrapper">
-                  <figure className="avatar">
+                  {/* <figure className="avatar">
                     <img 
                       src="./images/avatar-3.jpg" 
                       width="80" 
@@ -96,11 +96,11 @@ const Testimonials = () => {
                       loading="lazy" 
                       alt="Charles Richard - CEO of Angela" 
                     />
-                  </figure>
+                  </figure> */}
 
                   <div>
-                    <h3 className="h4 testi-name">Charles Richard</h3>
-                    <p className="testi-title">CEO, Angela</p>
+                    {/* <h3 className="h4 testi-name">Charles Richard</h3>
+                    <p className="testi-title">CEO, Angela</p> */}
                   </div>
                 </div>
 

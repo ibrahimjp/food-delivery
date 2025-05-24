@@ -14,7 +14,21 @@ const contactVariants = {
   },
 };
 
+
 const Contact = ({ phoneNumber }) => {
+  const handleFormSubmission = (e) => {
+     e.preventDefault();
+
+    const name = e.target[0].value;
+    const email = e.target[1].value;
+    const message = e.target[2].value;
+
+    const whatsappMessage = `Hello, I'm ${name} (${email}) 👋\n\n${message}`;
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+    window.open(whatsappURL, "_blank"); // opens WhatsApp in new tab
+     
+   };
   return (
     <>
     <div className="contact-container">
@@ -40,18 +54,18 @@ const Contact = ({ phoneNumber }) => {
             <motion.div className="contact-card" whileHover={{ scale: 1.05 }}>
               <FaEnvelope className="contact-icon" />
               <h2 className="contact-heading">Email</h2>
-              <p>info@YourGmail24.com</p>
+              <p>jpjamila2@gmail.com</p>
             </motion.div>
 
             <motion.div className="contact-card" whileHover={{ scale: 1.05 }}>
               <FaMapMarkerAlt className="contact-icon" />
               <h2 className="contact-heading">Address</h2>
-              <p>153 Williamson Plaza, Maggieberg, MT 09514</p>
+              <p>Rajendra Nagar, Near bsnl tower , pratapgarh (raj)</p>
             </motion.div>
           </div>
 
           {/* Contact Form */}
-          <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+          <form className="contact-form" onSubmit={handleFormSubmission}>
             <h2 className="form-title">Send a Message</h2>
 
             <div className="form-group">
