@@ -40,7 +40,7 @@ const ChatWidget = () => {
 
             <h2 className="chat-title">Jamila's Chat Support</h2>
 
-            <iframe style={{ width: '100%', height: '100%' }} frameBorder="0"
+            <iframe  frameBorder="0"
             src="https://widget.botsonic.com/CDN/index.html?service-base-url=https%3A%2F%2Fapi-azure.botsonic.ai&token=bd4f07f7-61fe-46e7-b700-77499bb040ac&base-origin=https%3A%2F%2Fbot.writesonic.com&instance-name=Botsonic&standalone=true&page-url=https%3A%2F%2Fbot.writesonic.com%2Fbots%2Fe8eb4e29-aaf5-48c8-bc1a-35d3a17ca21a%2Fconnect">
           </iframe>
           </div>
