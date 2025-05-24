@@ -36,14 +36,14 @@ const Cta = ({phonenumber}) => {
               className="w-100 cta-img"
             />
 
-            <img 
+            {/* <img 
               src="./images/sale-shape.png" 
               width="216" 
               height="226" 
               loading="lazy" 
               alt="Get up to 50% off now" 
               className="abs-img scale-up-anim"
-            />
+            /> */}
           </figure>
 
         </div>
