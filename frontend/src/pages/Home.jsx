@@ -11,7 +11,7 @@ import Banner from '../components/Banner'
 import Blog from '../pages/Blog'
 import Footer from '../components/Footer'
 import Preloader from '../components/Preloader'
-import SearchBox from '../components/SearchBox'
+import SearchBox from '../components/SearchBox.jsx'
 import { Link } from 'react-router-dom'
 import ChatWidget from '../components/ChatWidget/ChatWidget'
 function Home({phoneNumber}) {
