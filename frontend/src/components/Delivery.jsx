@@ -12,8 +12,7 @@ const Delivery = ({phoneNumber}) => {
             </h2>
 
             <p className="section-text">
-              The restaurants in Hangzhou also catered to many northern Chinese who had fled south from Kaifeng during
-              the Jurchen invasion of the 1120s, while it is also known that many restaurants were run by families.
+             
             </p>
 
             <button onClick={() => window.location.href = `tel:${phoneNumber}`} className="btn btn-hover">Order Now</button>
