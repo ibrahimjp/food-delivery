@@ -5,7 +5,7 @@ const SplineScene = () => {
   
   return (
     <div style={{ height: '300px', width: '300px' }}>
-      <Spline scene="https://prod.spline.design/CMBPn7i0B5vo1h8r/scene.splinecode" />
+      <Spline scene="/scene.splinecode" />
     </div>
   );
 };
