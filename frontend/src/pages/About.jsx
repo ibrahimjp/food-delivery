@@ -20,13 +20,13 @@ const About = ({phoneNumber}) => {
               className="w-100 about-img" 
             />
 
-            <img 
+            {/* <img 
               src="/images/sale-shape-red.png" 
               width="216" 
               height="226" 
               alt="get up to 50% off now"
               className="abs-img scale-up-anim" 
-            />
+            /> */}
           </div>
 
           <div className="about-content">
