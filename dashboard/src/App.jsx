@@ -10,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Edit from './pages/Edit/Edit'
 const App = () => {
 
-  const url = "https://jamilafood.onrender.com"
+  const url = "http://localhost:4000"
   // const url = "http://localhost:4000"
 
   return (

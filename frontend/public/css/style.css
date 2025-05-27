@@ -526,7 +526,16 @@
     padding-block: 145px 60px;
     text-align: center;
   }
-  
+  @media screen and (min-width: 768px) {
+    .hero {
+      margin-top: 85px ;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .hero {
+      margin-top: -37px;
+    }
+  }
   .hero-subtitle {
     color: var(--dark-orange);
     font-family: var(--ff-shadows-into-light);
@@ -1943,3 +1952,29 @@ Pre-loader Style
   top: 0;
   left: 0;
 }
+.user_icon{
+  font-size: 2rem;
+}
+
+
+.mobile-login .user-dropdown {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  color: #000;
+  font-size: 2.5rem;
+}
+.mobile-login .user_icon{
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  color: #000;
+  font-size: 2.5rem;
+}
+
+.user-dropdown{
+  cursor: pointer;
+  margin: 9px 10px;
+
+}
+
