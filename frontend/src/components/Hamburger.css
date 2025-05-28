@@ -121,7 +121,7 @@
   justify-content: space-between;
   position: relative;
   top: 10px;
-  
+
 }
 .mobile_header{
   display: flex;
@@ -141,4 +141,13 @@
   cursor: pointer;
   color: #000;
   font-size: 2rem;
+}
+.login_icon{
+  cursor: pointer;  
+  color: #000;
+  font-size: 2rem;
+  position: relative;
+  top: 5px;
+  margin-left: 10px;
+  
 }

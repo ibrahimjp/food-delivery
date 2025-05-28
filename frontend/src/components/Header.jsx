@@ -143,7 +143,7 @@ const Header = () => {
                       {isLoggedIn ? (
                         <div className="user-dropdown" style={{ position: 'relative', display: 'flex', alignItems: 'center', gap: '15px' }}>
                           <NavLink to="/cart" className="navbar-link" data-nav-link>
-                            <FontAwesomeIcon className='cart_icon' icon={faBagShopping} style={{ color: '#FF9D2E', position: 'relative', top: '-8px', fontSize: '2rem' }} />
+                            <FontAwesomeIcon className='cart_icon' icon={faBagShopping} />
                           </NavLink>
                           <FontAwesomeIcon 
                             className='user_icon' 
@@ -234,7 +234,7 @@ const Header = () => {
                     )}
                   </div>
                 ) : (
-                  <NavLink to="/login" className="menu__item">
+                  <NavLink to="/login" className="login_icon">
                     <FontAwesomeIcon className='user_icon' icon={faCircleUser} />
                   </NavLink>
                 )}
