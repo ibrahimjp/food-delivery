@@ -3,15 +3,22 @@ import Preloader from './Preloader';
 import { Link, useNavigate } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faBagShopping } from '@fortawesome/free-solid-svg-icons';
 import { faCircleUser } from '@fortawesome/free-regular-svg-icons';
-import './Hamburger.css'
+import './Hamburger.css';
+import './Header.css';
+
 const Header = () => {
   const [loading, setLoading] = useState(true);
   const [menu, setMenu] = useState("home");
   const [isMobile, setIsMobile] = useState(false);
   const navigate = useNavigate();
   const [showDropdown, setShowDropdown] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState(null);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 991);
@@ -44,21 +51,38 @@ const Header = () => {
       window.removeEventListener('load', handleLoad);
     };
   }, []);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     const token = localStorage.getItem('token');
+    const userData = localStorage.getItem('user');
 
-    if (token) {
+    if (token && userData) {
       setIsLoggedIn(true);
+      setUser(JSON.parse(userData));
     } else {
       setIsLoggedIn(false);
+      setUser(null);
     }
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY;
+      const visible = prevScrollPos > currentScrollPos || currentScrollPos < 10;
+      
+      setPrevScrollPos(currentScrollPos);
+      setVisible(visible);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [prevScrollPos]);
+
   const handleSignOut = () => {
     localStorage.removeItem('token');
+    localStorage.removeItem('user');
     setIsLoggedIn(false);
+    setUser(null);
     navigate('/');
   };
 
@@ -73,10 +97,8 @@ const Header = () => {
       ) : (
         <>
           {!isMobile && (
-            <header className="header" style={{ backgroundColor: "#780B10" }} data-header>
+            <header className={`header ${visible ? 'header-visible' : 'header-hidden'}`} data-header>
               <div className="container">
-
-
                 <h1>
                   <NavLink to="/" className="logo">FlavourFull Fusion<span className="span">.</span></NavLink>
                 </h1>
@@ -119,12 +141,15 @@ const Header = () => {
                     </li>
                     <li className="nav-item">
                       {isLoggedIn ? (
-                        <div className="user-dropdown" style={{ position: 'relative' }}>
+                        <div className="user-dropdown" style={{ position: 'relative', display: 'flex', alignItems: 'center', gap: '15px' }}>
+                          <NavLink to="/cart" className="navbar-link" data-nav-link>
+                            <FontAwesomeIcon className='cart_icon' icon={faBagShopping} style={{ color: '#FF9D2E', position: 'relative', top: '-8px', fontSize: '2rem' }} />
+                          </NavLink>
                           <FontAwesomeIcon 
                             className='user_icon' 
                             icon={faUser} 
                             onClick={toggleDropdown}
-                            style={{ cursor: 'pointer' }}
+                            style={{ cursor: 'pointer', color: '#000', fontSize: '2rem', position: 'relative', top: '-8px' }}
                           />
                           {showDropdown && (
                             <div className="dropdown-menu" style={{
@@ -138,7 +163,7 @@ const Header = () => {
                               minWidth: '150px',
                               zIndex: 1000
                             }}>
-                              <NavLink to="/orders" className="dropdown-item" style={{
+                              <NavLink to="/order" className="dropdown-item" style={{
                                 display: 'block',
                                 padding: '8px 16px',
                                 color: '#333',
@@ -164,82 +189,63 @@ const Header = () => {
                           )}
                         </div>
                       ) : (
-                        <NavLink to="/login" className="navbar-link" data-nav-link>
-                          <FontAwesomeIcon className='user_icon' icon={faCircleUser} />
-                        </NavLink>
+                        <div style={{ display: 'flex', alignItems: 'center'}}>
+                          <NavLink to="/cart" className="navbar-link" data-nav-link>
+                            <FontAwesomeIcon className='cart_icon' icon={faBagShopping} style={{ color: '#fff' }} />
+                          </NavLink>
+                          <NavLink to="/login" className="navbar-link" data-nav-link>
+                            <FontAwesomeIcon className='user_icon' icon={faCircleUser} />
+                          </NavLink>
+                        </div>
                       )}
                     </li>
                   </ul>
                 </nav>
-
-
               </div>
             </header>
           )}
 
           {isMobile && (
-            <nav>
+            <nav className={`mobile_nav ${visible ? 'header-visible' : 'header-hidden'}`}>
               <input id="menu__toggle" type="checkbox" />
-              <label class="menu__btn mt-3" for="menu__toggle">
+              <label className="menu__btn" htmlFor="menu__toggle">
                 <span></span>
               </label>
 
-              <ul class="menu__box">
-                <li><NavLink class="menu__item" to="/">Home</NavLink></li>
-                <li><NavLink class="menu__item" to="/about">About</NavLink></li>
-                <li><NavLink class="menu__item" to="/shop">Order</NavLink></li>
-                <li><NavLink class="menu__item" to="/contact-us">Contact Us</NavLink></li>
-              </ul>
-              {isLoggedIn ? (
-                <div className="user-dropdown " style={{ position: 'relative' }}>
+              <div className="mobile_header">
+                <NavLink to="/cart" className="cart_icon">
                   <FontAwesomeIcon 
-                    icon={faUser} 
-                    className='user_icon' 
-                    onClick={toggleDropdown}
-                    style={{ cursor: 'pointer', position: 'absolute', top: '0px', right: '8px', color: '#000', fontSize: '2.5rem' }}
+                    icon={faBagShopping} 
+                    className='cart_icon'
                   />
-                  {showDropdown && (
-                    <div className="dropdown-menu" style={{
-                      position: 'absolute',
-                      top: '100%',
-                      right: '0',
-                      backgroundColor: 'white',
-                      boxShadow: '0 2px 5px rgba(0,0,0,0.2)',
-                      borderRadius: '4px',
-                      padding: '8px 0',
-                      minWidth: '150px',
-                      zIndex: 1000
-                    }}>
-                      <NavLink to="/orders" className="dropdown-item" style={{
-                        display: 'block',
-                        padding: '8px 16px',
-                        color: '#333',
-                        textDecoration: 'none',
-                        ':hover': {
-                          backgroundColor: '#f5f5f5'
-                        }
-                      }}>My Orders</NavLink>
-                      <button onClick={handleSignOut} className="dropdown-item" style={{
-                        display: 'block',
-                        width: '100%',
-                        padding: '8px 16px',
-                        border: 'none',
-                        backgroundColor: 'transparent',
-                        textAlign: 'left',
-                        cursor: 'pointer',
-                        color: '#333',
-                        ':hover': {
-                          backgroundColor: '#f5f5f5'
-                        }
-                      }}>Sign Out</button>
-                    </div>
-                  )}
-                </div>
-              ) : (
-                <NavLink to="/login" className="menu__item mobile-login">
-                  <FontAwesomeIcon className='user_icon' icon={faCircleUser}/>
                 </NavLink>
-              )}
+                {isLoggedIn ? (
+                  <div className="user-dropdown">
+                    <FontAwesomeIcon 
+                      icon={faUser} 
+                      className='user_icon'
+                      onClick={toggleDropdown}
+                    />
+                    {showDropdown && (
+                      <div className="dropdown-menu">
+                        <NavLink to="/order" className="dropdown-item">My Orders</NavLink>
+                        <button onClick={handleSignOut} className="dropdown-item">Sign Out</button>
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <NavLink to="/login" className="menu__item">
+                    <FontAwesomeIcon className='user_icon' icon={faCircleUser} />
+                  </NavLink>
+                )}
+              </div>
+
+              <ul className="menu__box">
+                <li><NavLink className="menu__item" to="/">Home</NavLink></li>
+                <li><NavLink className="menu__item" to="/about">About</NavLink></li>
+                <li><NavLink className="menu__item" to="/shop">Order</NavLink></li>
+                <li><NavLink className="menu__item" to="/contact-us">Contact Us</NavLink></li>
+              </ul>
             </nav>
           )}
         </>

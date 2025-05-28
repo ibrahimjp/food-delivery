@@ -21,3 +21,102 @@
 .order-link:hover {
   color: #ff5722;
 }
+
+.add {
+  position: absolute;
+  right: 10px;
+  top: 250px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  .add {
+    position: absolute;
+    right: 10px;
+    top: 270px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+}
+.food-item-counter {
+  position: absolute;
+  right: 10px;
+  top: 250px;
+  background: white;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .food-item-counter {
+    position: absolute;
+    right: 10px;
+    top: 270px;
+    background: white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+  }
+  
+}
+.food-item-counter img {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.cartitemsp {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 10px;
+}
+
+
+
+.cart-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.cart-button-text {
+  background: #ff4742;
+  border: 1px solid #ff4742;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 25px;
+  text-align: center;
+  transition: 0.2s;
+}
+
+.cart-button-text:hover {
+  background: #ff6b66;
+  box-shadow: rgba(0, 0, 0, 0.15) 1px 3px 6px;
+  transform: translateY(-2px);
+}
+
+.cart-button-text:active {
+  background-color: #ff4742;
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  transform: translateY(0);
+}
+
+@media screen and (max-width: 768px) {
+  .cart-button {
+    margin-top: 15px;
+  }
+  
+  .cart-button-text {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
