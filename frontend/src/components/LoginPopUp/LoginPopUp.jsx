@@ -25,34 +25,35 @@ const LoginPopUp = ({ url }) => {
         localStorage.setItem('user', JSON.stringify(response.data.user));
         
         // Get the return path or default to home
-        const returnTo = localStorage.getItem('returnTo') || '/';
+        const returnTo ='/';
         // Clear the return path
         localStorage.removeItem('returnTo');
         // Navigate to the return path
         window.location.href = returnTo;
       } else {
-        alert("Login failed");
+        alert(`Signup failed: ${response.data.message}`);
       }
     } catch (err) {
       console.error(err);
-      alert("Login error");
+      alert(`Login failed: ${err.response.data.message}`);
     }
   };
 
   const onSignup = async (e) => {
     e.preventDefault();
     try {
+      console.log(data);
       const response = await axios.post(`${url}/api/user/register`, data);
       console.log(response);
       if (response.data.success) {
         localStorage.setItem('token', response.data.token);
         window.location.href = "/";
       } else {
-        alert("Signup failed");
+        alert(`Signup failed: ${response.data.message}`);
       }
     } catch (err) {
       console.error(err);
-      alert("Signup error");
+      alert(`Login failed: ${err.response.data.message}`);
     }
   };
 
