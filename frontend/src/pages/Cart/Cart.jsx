@@ -22,7 +22,7 @@ const Cart = () => {
     };
 
     // Check if cart is empty by checking if there are any items with quantity > 0
-    const isCartEmpty = !Object.values(cartItems).some(quantity => quantity > 0);
+    const isCartEmpty = !cartItems || !Object.values(cartItems).some(quantity => quantity > 0);
 
     return (
       <>

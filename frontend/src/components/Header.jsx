@@ -57,8 +57,16 @@ const Header = () => {
     const userData = localStorage.getItem('user');
 
     if (token && userData) {
-      setIsLoggedIn(true);
-      setUser(JSON.parse(userData));
+      try {
+        const parsedUser = JSON.parse(userData);
+        setIsLoggedIn(true);
+        setUser(parsedUser);
+      } catch (error) {
+        console.error('Error parsing user data:', error);
+        setIsLoggedIn(false);
+        setUser(null);
+        localStorage.removeItem('user'); // Clean up invalid data
+      }
     } else {
       setIsLoggedIn(false);
       setUser(null);

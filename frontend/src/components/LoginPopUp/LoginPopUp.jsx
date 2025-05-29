@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import './LoginPopUp.css';
 import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 const LoginPopUp = ({ url }) => {
   const [isLogin, setIsLogin] = useState(true);
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [data, setData] = useState({
     username: '',
     email: '',
@@ -14,6 +18,14 @@ const LoginPopUp = ({ url }) => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const toggleConfirmPasswordVisibility = () => {
+    setShowConfirmPassword(!showConfirmPassword);
   };
 
   const onLogin = async (e) => {
@@ -43,13 +55,16 @@ const LoginPopUp = ({ url }) => {
       console.log(response);
       if (response.data.success) {
         localStorage.setItem('token', response.data.token);
-        window.location.href = "/";
+        localStorage.setItem('user', JSON.stringify(response.data.user));
+        const returnTo = localStorage.getItem('returnTo') || '/';
+        localStorage.removeItem('returnTo');
+        window.location.href = returnTo;
       } else {
         alert(`Signup failed: ${response.data.message}`);
       }
     } catch (err) {
       console.error(err);
-      alert(`Login failed: ${err.response.data.message}`);
+      alert(`Signup failed: ${err.response.data.message}`);
     }
   };
 
@@ -67,8 +82,20 @@ const LoginPopUp = ({ url }) => {
               <div className="inputBx">
                 <input type="email" name="email" placeholder="Email" value={data.email} onChange={handleChange} required />
               </div>
-              <div className="inputBx">
-                <input type="password" name="password" placeholder="Password" value={data.password} onChange={handleChange} required />
+              <div className="inputBx password-container">
+                <input 
+                  type={showPassword ? "text" : "password"} 
+                  name="password" 
+                  placeholder="Password" 
+                  value={data.password} 
+                  onChange={handleChange} 
+                  required 
+                />
+                <FontAwesomeIcon 
+                  icon={showPassword ? faEyeSlash : faEye} 
+                  className="password-toggle"
+                  onClick={togglePasswordVisibility}
+                />
               </div>
               <div className="inputBx">
                 <input type="submit" value="Sign In" />
@@ -89,11 +116,35 @@ const LoginPopUp = ({ url }) => {
               <div className="inputBx">
                 <input type="email" name="email" placeholder="Email" value={data.email} onChange={handleChange} required />
               </div>
-              <div className="inputBx">
-                <input type="password" name="password" placeholder="Password" value={data.password} onChange={handleChange} required />
+              <div className="inputBx password-container">
+                <input 
+                  type={showPassword ? "text" : "password"} 
+                  name="password" 
+                  placeholder="Password" 
+                  value={data.password} 
+                  onChange={handleChange} 
+                  required 
+                />
+                <FontAwesomeIcon 
+                  icon={showPassword ? faEyeSlash : faEye} 
+                  className="password-toggle"
+                  onClick={togglePasswordVisibility}
+                />
               </div>
-              <div className="inputBx">
-                <input type="password" name="confirmPassword" placeholder="Confirm Password" value={data.confirmPassword} onChange={handleChange} required />
+              <div className="inputBx password-container">
+                <input 
+                  type={showConfirmPassword ? "text" : "password"} 
+                  name="confirmPassword" 
+                  placeholder="Confirm Password" 
+                  value={data.confirmPassword} 
+                  onChange={handleChange} 
+                  required 
+                />
+                <FontAwesomeIcon 
+                  icon={showConfirmPassword ? faEyeSlash : faEye} 
+                  className="password-toggle"
+                  onClick={toggleConfirmPasswordVisibility}
+                />
               </div>
               <div className="inputBx">
                 <input type="submit" value="Sign Up" />
