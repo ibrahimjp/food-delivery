@@ -23,12 +23,8 @@ const LoginPopUp = ({ url }) => {
       if (response.data.success) {
         localStorage.setItem('token', response.data.token);
         localStorage.setItem('user', JSON.stringify(response.data.user));
-        
-        // Get the return path or default to home
         const returnTo ='/';
-        // Clear the return path
         localStorage.removeItem('returnTo');
-        // Navigate to the return path
         window.location.href = returnTo;
       } else {
         alert(`Signup failed: ${response.data.message}`);

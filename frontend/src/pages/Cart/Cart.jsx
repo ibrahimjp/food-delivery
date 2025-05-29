@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import './Cart.css';
 import { StoreContext } from '../../context/StoreContext.jsx'; // Adjust path if needed
 import { useNavigate } from 'react-router-dom';
@@ -11,11 +11,8 @@ const Cart = () => {
     const navigate = useNavigate();
 
     const handleCheckout = () => {
-        // Check if user is logged in (you can replace this with your actual auth check)
-        console.log(localStorage);
-        const isLoggedIn = localStorage.getItem('user') !== null;
+        const isLoggedIn = localStorage.getItem('token') !== null;
         if (!isLoggedIn) {
-            // Store the current path before redirecting
             localStorage.setItem('returnTo', '/cart');
             toast.error('You must be logged in to order. Redirecting to login page...');
             navigate('/login');
@@ -24,12 +21,33 @@ const Cart = () => {
         }
     };
 
-    const userData = JSON.parse(localStorage.getItem('user'));
+    // Check if cart is empty by checking if there are any items with quantity > 0
+    const isCartEmpty = !Object.values(cartItems).some(quantity => quantity > 0);
 
     return (
       <>
       <Header/>
-        <div className='cart'>
+      {isCartEmpty ? (
+        <div className='cart-empty'>
+            <div className="empty-cart-content">
+                <div className="empty-cart-icon">🛒</div>
+                <h2>Your Cart is Empty</h2>
+                <p>Looks like you haven't added any delicious items to your cart yet!</p>
+                <div className="empty-cart-suggestions">
+                    <p>Why not try our:</p>
+                    <ul>
+                        <li>🍕 Signature Pizzas</li>
+                        <li>🍔 Gourmet Burgers</li>
+                        <li>🍜 Special Noodles</li>
+                    </ul>
+                </div>
+                <button onClick={() => navigate('/shop')} className="order-now-btn">
+                    Order Now
+                </button>
+            </div>
+        </div>
+      ) : (
+          <div className='cart'>
             <div className="cart-items">
                 <div className="cart-items-title">
                     <p>Items</p>
@@ -83,6 +101,7 @@ const Cart = () => {
                 </div>
             </div>
         </div>
+        )}
             <Footer/>
             </>
     );
