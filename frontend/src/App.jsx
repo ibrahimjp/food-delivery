@@ -11,7 +11,7 @@ import PlaceOrder from './pages/PlaceOrder/PlaceOrder'
 
 const App = () => {
   // const url = "http://localhost:4000";
-  const url = "https://jamila-backend.onrender.com";
+  const url = "https://jamilafood.onrender.com";
   const phoneNumber = "+918690120453"; 
   return (
     <Routes>
